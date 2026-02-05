@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <p id="text">According to all known laws of aviation, there is no way a bee should be able to fly.
+    <p id="myInput">According to all known laws of aviation, there is no way a bee should be able to fly.
 Its wings are too small to get its fat little body off the ground.
 The bee, of course, flies anyway because bees don't care what humans think is impossible.
 Yellow, black. Yellow, black. Yellow, black. Yellow, black.
@@ -1368,16 +1368,14 @@ I'm not making a major life decision during a production number!
 All right. Take ten, everybody. Wrap it up, guys.
 I had virtually no rehearsal for that. </p>
     <script>
-function copyElementText(id) {
-    var text = document.getElementById(id).innerText;
-    var elem = document.createElement("textarea");
-    document.body.appendChild(elem);
-    elem.value = text;
-    elem.select();
-    document.execCommand("copy");
-    document.body.removeChild(elem);
+function myFunction() {
+  var copyText = document.getElementById("myInput");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999);
+  navigator.clipboard.writeText(copyText.value);
+  alert("Copied the text: " + copyText.value);
 }
     </script>
-    <button onclick="copyElementText()">Copy</button>
-    <a href="index.html>">Back</a>
+    <button onclick="myFunction()">Copy</button>
+    <a href="index.html">Back</a>
   </body>
